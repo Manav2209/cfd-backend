@@ -8,6 +8,9 @@
     "migrate:up": "node-pg-migrate up",
     "migrate:down": "node-pg-migrate down"
   },
+  "exports":{
+    ".":"./src/index.ts"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
