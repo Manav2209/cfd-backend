@@ -7,9 +7,6 @@ import dotenv from "dotenv";
 import type { AuthRequest } from "../middleware";
 dotenv.config();
 
-
-
-
 export const signin =  async  (req : Request, res: Response) => {
   
     const { username, password } = req.body;
