@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import authRouter from "./routes/authRoute";
-import { tradeRouter } from "./routes/traderoute";
+import { tradeRouter } from "./routes/tradeRoute";
 import { balanceRouter } from "./routes/balanceRoute";
 import { candleRouter } from "./routes/candleRoute";
 import { assetRouter } from "./routes/assetRoute";

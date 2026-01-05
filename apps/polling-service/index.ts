@@ -21,6 +21,7 @@ async function main(){
     restartPolling();
 
 function handleSubscribeMarket(market: string){
+    
     if(SUBSCRIBED_MARKETS.has(market)){
         return;
     }
@@ -38,12 +39,12 @@ function handleSubscribeMarket(market: string){
             JSON.stringify(tradeData.data)
         )
         const tickerData= {
-            buy: parseFloat(tradeData.data.p),
-            sell : parseFloat(tradeData.data.p),
+            buy: parseFloat(tradeData.data.p) + 0.04*parseFloat(tradeData.data.p),
+            sell : parseFloat(tradeData.data.p) - 0.04*parseFloat(tradeData.data.p),
             market: tradeData.data.s ,
             time: tradeData.data.E
         }
-        console.log(tickerData);
+        
         // publish the data to pub sub 
         await publisher.publish(
             market.toLowerCase(),
